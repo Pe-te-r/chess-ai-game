@@ -21,3 +21,15 @@ class Square:
     def set_main_screen(self,screen):
         self.screen=screen
 
+    def is_empty(self):
+        return self.value==0
+
+    def add_piece(self,piece):
+        self.piece=piece
+        if self.piece:
+            image=self.piece.image
+            self.value=self.piece.value
+            self.image_rect =image.get_rect()
+            self.image_rect.center=(SQUARE_SIZE//2,SQUARE_SIZE//2)
+            self.surface.blit(image,self.image_rect)
+            self.show_square()
