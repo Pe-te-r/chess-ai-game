@@ -22,7 +22,7 @@ class Square:
         self.screen=screen
 
     def is_empty(self):
-        return self.value==0
+        return self.value ==0
 
     def add_piece(self,piece):
         self.piece=piece
@@ -33,3 +33,8 @@ class Square:
             self.image_rect.center=(SQUARE_SIZE//2,SQUARE_SIZE//2)
             self.surface.blit(image,self.image_rect)
             self.show_square()
+    
+    def declare_empty(self):
+        self.value=0
+        self.surface.fill(self.color)
+        self.show_square()
