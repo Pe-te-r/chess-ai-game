@@ -36,5 +36,6 @@ class Square:
     
     def declare_empty(self):
         self.value=0
+        self.piece=None
         self.surface.fill(self.color)
         self.show_square()

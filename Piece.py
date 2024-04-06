@@ -8,6 +8,14 @@ class Piece:
         self.value=value
         self.image=None
         self.add_image()
+        self.adjust_value()
+    
+    def adjust_value(self):
+        if self.color == 'white':
+            self.value *= 1
+        else:
+            self.value *= -1
+
 
     def add_image(self):
         self.full_path ='/home/phantom/coding/python-code/python game/chess-ai-game/assets/imgs-80px'
@@ -18,13 +26,20 @@ class Pawn(Piece):
         super().__init__(color,name,value)
 
     def valid_moves(self,row,col):
+        valid_squares=[]
         if self.color=='white':
-            valid_squares=[(row+1,col)]
-            return valid_squares
+            if col==1:
+                valid_squares=[(row,col+1),(row,col+2)]
+            else:
+                valid_squares=[(row,col+1)]
+            return valid_squares 
         else:
-            valid_squares=[(row-1,col)]
+            if col==6:
+                valid_squares=[(row,col-1),(row,col-2)]
+            else:    
+                valid_squares=[(row,col-1)]
             return valid_squares
-        
+
         
 
 

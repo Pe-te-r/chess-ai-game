@@ -10,10 +10,10 @@ class Game:
         pygame.display.set_caption('Chess game for trial')
         self.squares=[]
         self.piece_selected=False
-        self.selecte_square=None
-        self.original_square=None
+        self.selected_square=None
+        # self.original_square=None
         self.show_background()
-
+        self.selected_piece=None
     def show_background(self):
 
         for row in range(8):
